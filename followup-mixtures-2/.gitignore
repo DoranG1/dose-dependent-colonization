@@ -1,11 +1,7 @@
-# Ignore large file intermediates.
-/workflow/out/
-
 # Ignore snakemake log files.
 .snakemake
 .Rhistory
 
 # Don't ignore any .gitignore files.
 !*.gitignore
-!workflow/out/e0049-e0050/DADA2_output/*
 config/mixtureDataframe.txt
