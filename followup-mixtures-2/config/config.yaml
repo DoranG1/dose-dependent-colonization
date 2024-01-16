@@ -1,0 +1,16 @@
+# Samplesheet for sample demultiplexing and file naming.
+samplesheet: "config/231030-e0049-e0050-doseDependence-16S.txt"
+indices: "config/indexfordemux.txt"
+fastqlist: "config/fastq-e0049-e0050.txt"
+lenR1primer: "23"
+lenR2primer: "24"
+lenR1index: "7"
+lenR2index: "7"
+
+# Input directories.
+fastqdir: "/oak/stanford/groups/relman/gcloud/compressed_raw_data_backup/kxue/231030-e0049-e0050-doseDependence/"
+demux: "workflow/rules/demux.sh"
+
+# Output directories.
+demuxdir: "workflow/out/demux"
+trimdir: "workflow/out/trimmed"
