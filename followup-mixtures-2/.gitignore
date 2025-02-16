@@ -1,7 +1,0 @@
-# Ignore snakemake log files.
-.snakemake
-.Rhistory
-
-# Don't ignore any .gitignore files.
-!*.gitignore
-config/mixtureDataframe.txt
