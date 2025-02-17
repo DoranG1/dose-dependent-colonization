@@ -2,7 +2,9 @@
 
 The code in this repository performs the analyses described in the manuscript "Competition for shared resources increases dependence on initial population size during coalescence of gut microbial communities," available here: https://www.biorxiv.org/content/10.1101/2023.11.29.569120v2
 
-The code here performs analysis on the sequencing, growth curve, and metabolomic data associated with the manuscript and runs the described consumer-resource model. Individual published figure panels are included for reference alongside each analysis script, as well as relevant data files.
+The code here performs analysis on the sequencing, growth curve, and metabolomic data associated with the manuscript and runs the described consumer-resource model. Individual published figure panels are included for reference alongside each analysis script, as well as relevant data files. An example Snakemake pipeline for processing raw sequencing data is also provided in the sequencing/processRawData directory.
+
+Raw sequencing data are available at the NCBI SRA at [Bioproject PRJNA1212511](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1212511).
 
 **For sequencing data, cleaned and consolidated data text files corresponding to published figures are located in the following directories:**<br/>
 **Parent communities**: sequencing/parentCommunities/data/intermediates/e0012-mixtureDataframe.txt<br/>
