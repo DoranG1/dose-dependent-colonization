@@ -86,6 +86,11 @@ dataTheoretical <- dataPlotting %>%
                    relAbundanceOld = NA) %>% 
           mutate(logAbundance = ifelse(relAbundance!=0, log10(relAbundance), -3), mixtureType = ifelse(ratio %in% ratios, "theoretical", "actual")))
 
+# Export intermediate annotated data file.
+dataPaper <- dataTheoretical %>% 
+  filter(community %in% c("Bacte0126","Tanne0007","Bacte0126-Tanne0007") | (mixtureType=="theoretical" & combo=="Bacte0126-Tanne0007"))
+write.table(dataPaper, "e0065MixtureDataframe.txt", quote=FALSE, row.names=FALSE, sep="\t")
+
 dataStats <- dataTheoretical %>%
   filter(mixtureType=="actual" & ratio %in% ratios) %>% 
   group_by(combo, passage, rep, OTU) %>% 

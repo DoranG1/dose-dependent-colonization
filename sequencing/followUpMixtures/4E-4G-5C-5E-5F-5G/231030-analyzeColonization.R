@@ -326,6 +326,10 @@ dataTheoretical <- dataPlotting %>%
   # Bind to theoretical.
   mutate(mixtureType = "actual")
   
+# Alternative theoretical dataframe, do not remove low coverage samples (for public data export.)
+dataTheoretical <- dataPlotting %>% 
+  mutate(mixtureType = "actual")
+
 dataTheoretical <- dataTheoretical %>% 
   rbind(dataTheoretical %>% 
           mutate(relAbundanceOld = ifelse(is.na(relAbundanceOld), 0, relAbundanceOld)) %>% 
@@ -437,6 +441,13 @@ dataTheoretical <- dataTheoretical %>%
   mutate(relAbundance = ifelse(is.na(relAbundanceOld) | relAbundanceOld<10^-3, 10^-3, relAbundanceOld),
          logAbundance = log10(relAbundance),
          ratio = fct_relevel(ratio, ratiosFull))
+
+# Export cleaned intermediate file containing just datasets shown in paper (but including contaminants).
+dataPaper <- dataTheoretical %>% 
+  filter(combo %in% c("EnteC-Strep17","EnteC2-Strep17","EnteC3-Strep17","EnteC2-XFB","EnteC3-XFB","Strep7-XFB")) %>% 
+  filter(mixtureRep == 1) %>% 
+  select(-c(plate,mixtureRep,OTUnum,code,sumCounts))
+write.table(dataPaper, "e0049e0050MixtureDataframe.txt", quote=FALSE, row.names=FALSE, sep="\t")
 
 # Calculate new DD statistics.
 dataStatsModel <- dataTheoretical %>% 

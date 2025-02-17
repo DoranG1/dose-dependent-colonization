@@ -56,6 +56,9 @@ df <- left_join(df_otu, df_tax) %>%
   mutate(FamilyRel_abundance=sum(rel_abundance)) %>% 
   ungroup()
 
+# Export dataframe intermediate text file.
+write.table(df, "analysis/e0012-mixtureDataframe.txt", quote=FALSE, row.names=FALSE, sep="\t")
+
 # Add passage 0 to all replicates.
 df <- df %>% 
   rbind(df %>% filter(passage==0) %>% mutate(inoculationreplicate=2)) %>% 

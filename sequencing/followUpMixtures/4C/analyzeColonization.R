@@ -63,6 +63,9 @@ dataTheoretical <- dataPlotting %>%
                    relAbundanceOld = NA) %>% 
           mutate(logAbundance = ifelse(relAbundance!=0, log10(relAbundance), -3), mixtureType = ifelse(ratio %in% ratios, "theoretical", "actual")))
 
+# Export intermediate annotated data file.
+write.table(dataTheoretical, "e0063MixtureDataframe.txt", quote=FALSE, row.names=FALSE, sep="\t")
+
 dataStats <- dataTheoretical %>%
   filter(mixtureType=="actual" & ratio %in% ratios) %>% 
   # Remove points that are obviously due to contamination.

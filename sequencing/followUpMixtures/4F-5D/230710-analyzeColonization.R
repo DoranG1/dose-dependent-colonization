@@ -303,6 +303,18 @@ dataMixture1Theoretical <- dataMixture1Theoretical %>%
   ungroup() %>% 
   mutate(ratio = fct_relevel(ratio, ratiosFull))
 
+# Export cleaned intermediate file containing just datasets shown in paper (but including contaminants).
+dataPaper <- dataPlottingTheoretical %>% 
+  filter(combo %in% c("7-17","XFA-17")) %>% 
+  mutate(passage = 5) %>% 
+  select(-c(taxa,hex,OTUnum,col)) %>% 
+  rbind(S7S17p3 %>% select(!plate)) %>% 
+  mutate(combo = case_when(combo=="7-17" ~ "Strep7-Strep17",
+                           combo=="XFA-17" ~ "D1-Strep17",
+                           combo=="Strep7-Strep17" ~ "Strep7-Strep17"))
+
+write.table(dataPaper, "e0043MixtureDataframe.txt", quote=FALSE, row.names=FALSE, sep="\t")
+
 # Calculate dose difference stat on mixture 1.
 dataMix1StatsOld <- dataMixture1Theoretical %>% 
   filter(mixtureType=="actual" & ratio %in% ratios) %>%
