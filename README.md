@@ -4,23 +4,23 @@ The code in this repository performs the analyses described in the manuscript "C
 
 The code here performs analysis on the sequencing, growth curve, and metabolomic data associated with the manuscript and runs the described consumer-resource model. Individual published figure panels are included for reference alongside each analysis script, as well as relevant data files.
 
-For sequencing data, cleaned and consolidated data text files corresponding to published figures are located in the following directories:\n
-For parent communities: sequencing/parentCommunities/data/intermediates/e0012-mixtureDataframe.txt\n
-For community coalescence: sequencing/communityCoalescence/data/intermediates/mixtureDataframe.zip\n
-For follow-up mixtures (including pairwise, 3-strain, and strain-community mixtures): sequencing/followUpMixtures/combinedCleanedData/combinedCleanedMixtureDataframe.txt
+**For sequencing data, cleaned and consolidated data text files corresponding to published figures are located in the following directories:**<br/>
+**Parent communities**: sequencing/parentCommunities/data/intermediates/e0012-mixtureDataframe.txt<br/>
+**Community coalescence**: sequencing/communityCoalescence/data/intermediates/mixtureDataframe.zip<br/>
+**Follow-up mixtures (pairwise, 3-strain, and strain-community)**: sequencing/followUpMixtures/combinedCleanedData/combinedCleanedMixtureDataframe.txt
 
-Note the following correspondence of published strain isolate and in vitro community names to internal names used in analysis scripts:\n
-XBA:  A1\n
-XBB:  A2\n
-XCA:  B1\n
-XCB:  B2\n
-XDA:  C1\n
-XDB:  C2\n
-XFA:  D1\n
-XFB:  D2\n
-EnteC2 (E2):  E. faecalis\n
-EnteC3 (E3):  E. casseliflavus\n
-Strep7 (S7):  L. garvieae\n
-Strep17 (S17):  L. lactis\n
-Bacte0126 (B126): B. fragilis\n
-Tanne0007 (T7): P. goldsteinii\n
+**Note the following correspondence of published strain isolate and in vitro community names to internal names used in analysis scripts:**<br/>
+XBA:  A1<br/>
+XBB:  A2<br/>
+XCA:  B1<br/>
+XCB:  B2<br/>
+XDA:  C1<br/>
+XDB:  C2<br/>
+XFA:  D1<br/>
+XFB:  D2<br/>
+EnteC2 (E2):  E. faecalis<br/>
+EnteC3 (E3):  E. casseliflavus<br/>
+Strep7 (S7):  L. garvieae<br/>
+Strep17 (S17):  L. lactis<br/>
+Bacte0126 (B126): B. fragilis<br/>
+Tanne0007 (T7): P. goldsteinii
